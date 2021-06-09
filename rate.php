@@ -42,4 +42,4 @@ $pair = $cryptocurrencies;
 
 curl_close($curl);
 
-var_dump($btc_jpy_rate);
+//var_dump($btc_jpy_rate);

@@ -142,7 +142,7 @@ if ($my_btc > 0) {
 			$update_stmt->bindvalue('up_count', 0, PDO::PARAM_INT);
 			$update_stmt->bindvalue('down_count', 0, PDO::PARAM_INT);
 			$update_stmt->execute();
-			var_dump('0');
+			//var_dump('0');
 		//まだ変更の余地がある
 		//下がりきって上がった時
 		} elseif ($coincheck_info['rate'] < $btc_jpy_rate) {
@@ -156,14 +156,14 @@ if ($my_btc > 0) {
 				$update_stmt->bindvalue('up_count', 0, PDO::PARAM_INT);
 				$update_stmt->bindvalue('down_count', 0, PDO::PARAM_INT);
 				$update_stmt->execute();
-				var_dump('1');
+				//var_dump('1');
 			} else {
 				// upカウントを上げる
 				$update_sql = 'UPDATE coincheck set up_count = :up_count where id = 1';
 				$update_stmt = $dbh->prepare($update_sql);
 				$update_stmt->bindvalue('up_count', 1, PDO::PARAM_INT);
 				$update_stmt->execute();
-				var_dump('1.2');
+				//var_dump('1.2');
 			}
 		//下がりきってまだ下がってる時
 		} else {
@@ -173,7 +173,7 @@ if ($my_btc > 0) {
 			$update_stmt = $dbh->prepare($update_sql);
 			$update_stmt->bindvalue('down_count', $coincheck_info['down_count'] + 1, PDO::PARAM_INT);
 			$update_stmt->execute();
-			var_dump('2');
+			//var_dump('2');
 		}
 	//down_countが低い
 	} else {
@@ -184,7 +184,7 @@ if ($my_btc > 0) {
 			$update_stmt = $dbh->prepare($update_sql);
 			$update_stmt->bindvalue('down_count', 0, PDO::PARAM_INT);
 			$update_stmt->execute();
-			var_dump('3');
+			//var_dump('3');
 		} else {
 			//レートが下がっている
 			//down_countを上げる
@@ -192,7 +192,7 @@ if ($my_btc > 0) {
 			$update_stmt = $dbh->prepare($update_sql);
 			$update_stmt->bindvalue('down_count', $coincheck_info['down_count'] + 1, PDO::PARAM_INT);
 			$update_stmt->execute();
-			var_dump('4');
+			//var_dump('4');
 		}
 	}
 }
@@ -300,7 +300,7 @@ if ($order['bool'] !== '') {
 	$message .= 'type:' . $order['order_type'] . "\r\n";
 	$headers = 'From: hxh.feitan@gmail.com';
 	mail($to, $subject, $message, $headers);
-	var_dump($json_decode);
+	//var_dump($json_decode);
 }
 
 // 最新の取引価格を保存

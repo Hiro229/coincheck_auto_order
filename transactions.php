@@ -56,6 +56,6 @@ if ($json_decode == NULL) {
 $transaction_rate_btc = $json_decode['data'][0]['rate'];
 $transaction_bill_jpy = $json_decode['data'][0]['funds']['jpy'];
 $transaction_bill_btc = $json_decode['data'][0]['funds']['btc'];
-var_dump($json_decode);
-var_dump($transaction_bill_jpy);
-var_dump($transaction_bill_btc);
+//var_dump($json_decode);
+//var_dump($transaction_bill_jpy);
+//var_dump($transaction_bill_btc);

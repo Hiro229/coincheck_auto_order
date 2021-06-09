@@ -56,5 +56,5 @@ if (!$json_decode["success"]) {
 }
 $my_jpy = $json_decode['jpy'];
 $my_btc = $json_decode['btc'];
-var_dump($my_jpy);
-var_dump($my_btc);
+//var_dump($my_jpy);
+//var_dump($my_btc);
